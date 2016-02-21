@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: salecodes_development
+  pool: 5
+  username: postgres
+  password: "123456"
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: salecodes_production
+  pool: 5
+  username: postgres
+  password: "123456"
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: salecodes_test
+  pool: 5
+  username: postgres
+  password: "123456"
