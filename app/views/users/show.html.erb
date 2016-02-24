@@ -1,166 +1,23 @@
-<!-- <div class="container">
-  <div class="modal-header">
-    <h4 class="modal-title">Your private profile</h4>
-    </div>
-  <div class="modal-body">
-    <center>
-      <%= image_tag @user.avatar_url(:thumb), :border => "0", :class => "img-circle"%>
-      <h3 class="media-heading"><%= @user.full_name %> <small><%= @user.email %></small></h3>
-        <a class="label label-warning">Recent activity</a>
-        <%= link_to "Settings", edit_user_registration_path, :class => "label label-info" %>
-    </center>
-    <hr>
-    <center>
-    <p class="text-left"><strong>Bio: </strong><br>
-      <%= @user.short_bio %></p>
-    <br>
-    </center>
-  </div>
-  <div class="modal-footer">
-    <center>
-      <%= link_to('Log Out', destroy_user_session_path, :method => :delete, :class => "btn btn-default")%>
-    </center>
-  </div>
-</div> -->
+<style type="text/css">
+  .amazon > a:hover, .amazon > a:focus {
+    text-decoration: none;
+    background-color: #eea236 !important;
+  }
 
-<div class="collapse col-md-6 pull-right" id="userlogin">
-  <div class="well">
-    <form>
-      <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Email Address">
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary pull-right">Sign in</button>
-      <br><br>
-      <p class="text-center"><a href="#">Create account</a> or <a href="#">reset password</a></p>
-    </form>
-  </div>
-</div>
 
-<!-- Page Content -->
+  .facebook > a:hover, .facebook > a:focus {
+    text-decoration: none;
+    background-color: #357ebd !important;
+  }
+  .twitter > a:hover, .twitter > a:focus {
+    text-decoration: none;
+    background-color: #269abc !important;
+  }
+</style>
 <div class="container">
-    <h2>Account</h2>
-    <hr>
-<div class="row">
-  <div class="col-md-12">
-      <div class="col-md-3 text-center">
-
-          <!--User profile-->
-          <%= image_tag @user.avatar_url(:thumb), :border => "0", :class => "img-circle"%>
-          <h3><%= @user.full_name %></h3><!--USER NAME-->
-          <h5><%= @user.email %></h5><!--USER EMAIL-->
-          <br>
-          <!--Navigation-->
-          <div>
-          <ul class="nav nav-stacked list-group" role="tablist">
-              <li role="presentation" class="active">
-                  <a href="#overview" class="list-group-item" aria-controls="#overview" role="tab" data-toggle="tab">
-                      <i class="fa fa-user fa-lg fa-fw">
-                      </i>&nbsp; Overview
-                  </a>
-              </li>
-              <li role="presentation">
-                  <a href="#settings" class="list-group-item" aria-controls="#settings"  role="tab" data-toggle="tab">
-                      <i class="fa fa-cog fa-lg fa-fw">&nbsp;
-                      </i>Settings
-                  </a>
-              </li>
-              <li role="presentation">
-                <%= link_to('Sign Out', destroy_user_session_path, :method => :delete, :class => "list-group-item")%>
-              </li>
-          </ul>
-          </div>
-
-      </div>
-      <div class="col-md-9">
-      <div class="tab-content">
-          <div role="overview" class="tab-pane active" id="overview">
-              <!--Items on review and wishlist-->
-
-              <div class="col-md-12">
-                  <h5>My Stats</h5>
-                  <div class="panel panel-default">
-                  <div class="panel-body text-center">
-                      <div class="col-md-4">
-                      <h5>Discounts</h5>
-                      <h3><span class="badge">2</span>&nbsp; Requests</h3>
-                      <hr>
-                      <h3><span class="badge">0</span>&nbsp; Available</h3>
-                      </div>
-                      <div class="col-md-4">
-                      <h5>Reviews</h5>
-                      <h3><span class="badge">10</span>&nbsp; Confirmed Reviews</h3>
-                      </div>
-                      <div class="col-md-4">
-                      <h5>Tier</h5>
-                      <img src="http://placehold.it/100x100" alt="..." class="img-circle" >
-                      </div>
-                  </div>
-                  </div>
-              </div>
-
-              <!--Connect social-->
-              <div class="col-md-6">
-                  <h5>Social Network</h5>
-              <div class="panel panel-default">
-                  <div class="panel-body">
-                      <ul class="nav nav-stacked text-center">
-                          <li><a href="#" class="btn btn-warning"><i class="fa fa-amazon fa-lg"></i>&nbsp; Connect your Amazon account</a></li>
-                          <li><a href="#" class="btn btn-primary"><i class="fa fa-facebook fa-lg"></i>&nbsp; Link Facebook</a></li>
-                          <li><a href="#" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i>&nbsp; Link Twitter</a></li>
-                      </ul>
-                  </div>
-              </div>
-              </div>
-
-          </div>
-          <div role="settings" class="tab-pane" id="settings">
-              <div class="col-md-6">
-                  <h5>Settings</h5>
-              <form>
-                  <div class="form-group">
-                      <input type="text" class="form-control" id="firstname" placeholder="First Name">
-                  </div>
-                  <div class="form-group">
-                      <input type="text" class="form-control" id="secondname" placeholder="Second Name">
-                  </div>
-                  <div class="form-group">
-                      <input type="password" class="form-control" id="oldpassword" placeholder="Old Password">
-                  </div>
-                  <div class="form-group">
-                      <input type="password" class="form-control" id="newpassword" placeholder="New Password">
-                  </div>
-                  <div class="form-group">
-                      <input type="password" class="form-control" id="connewpassword" placeholder="Confirm new Password">
-                  </div>
-                  <div class="form-group">
-                      <textarea type="textarea" class="form-control" id="password" placeholder="Your Bio"></textarea>
-                  </div>
-                  <br>
-
-                  <div classs="radio">
-                      Do you want recieve daily discount?
-                    <label class="radio-inline">
-                      <input type="radio" name="dailydiscount" id="dailydiscounts" value="yesdiscount" checked>
-                      Yes
-                    </label>
-                    <label class="radio-inline">
-                    <input type="radio" name="dailydiscount" id="dailydiscounts" value="nodiscount">
-                      No
-                    </label>
-                  </div>
-                  <br>
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o fa-lg"></i>&nbsp; Submit</button>
-              </form>
-              </div>
-          </div>
-          <!--
-          <div role="signout" class="tab-pane" id="singout">...</div>
-      -->
-        </div>
-
+  <h2>Account</h2>
+  <hr>
+  <div class="row" id="profile">
+    <%= render "users/profile" %>
   </div>
-
 </div>

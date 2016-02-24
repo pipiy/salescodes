@@ -6,6 +6,7 @@
 //= require vendors/jquery.fancybox
 //= require ajax
 //= require sign-in_sign-up
+//= require bootstrap-filestyle
 //
 //= require angular
 //= require angular-bootstrap

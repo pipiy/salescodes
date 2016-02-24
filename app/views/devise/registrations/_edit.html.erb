@@ -1,0 +1,57 @@
+<!-- <center>
+  <%= link_to "Delete my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class =>"label label-danger", :style => "float: right" %>
+</center> -->
+<%= form_for(@user, :url => registration_path(@user), :html => {:method => :put, :multipart => true}, remote: true) do |f| %>
+  <div class="modal-body">
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.file_field :avatar  %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.text_field :remote_avatar_url, :class => "form-control", :placeholder => "or image URL"  %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.text_field :first_name, :class => "form-control", :id => "first_name", :placeholder => "First Name" %><br />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.text_field :last_name, :class => "form-control", :id => "last_name", :placeholder => "Last Name" %><br />
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <%= f.text_area :short_bio, :class => "form-control", :id => "short_bio", :placeholder => "Mini biography", :rows => "5" %>
+          </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= f.password_field :current_password, autocomplete: "off", :class => "form-control", :placeholder => "Old password" %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "New password" %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Confirm new password" %>
+        </div>
+      </div>
+      <div class="ui buttons padding" style="text-align: center">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o fa-lg"></i>&nbsp; Submit</button>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $(":file").filestyle({icon: false});
+</script>

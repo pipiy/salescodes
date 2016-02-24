@@ -52,6 +52,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+    @user = User.find(current_user.id)
+
+    @user.update_attributes(sign_up_params)
+    render :edit
+  end
+
   protected
 
     def sign_up_params
