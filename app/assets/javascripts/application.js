@@ -15,6 +15,7 @@
 //= require angular-ui-date
 //= require angular-bootstrap
 //= require angular-uuid4
+//= require salescode
 //
 //= require angular-rails-templates
 //= require angularjs/rails/resource
@@ -23,4 +24,3 @@
 //= require select2
 //= require lodash
 //
-//= require turbolinks

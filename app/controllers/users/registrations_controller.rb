@@ -61,11 +61,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-    def sign_up_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-    end
+  def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :remote_avatar_url, :short_bio)
+  end
 
-    def after_update_path_for(resource)
-      user_path(resource)
-    end
+  def after_update_path_for(resource)
+    user_path(resource)
+  end
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
 end

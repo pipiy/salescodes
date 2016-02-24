@@ -1,6 +1,3 @@
-<!-- <center>
-  <%= link_to "Delete my account", registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class =>"label label-danger", :style => "float: right" %>
-</center> -->
 <%= form_for(@user, :url => registration_path(@user), :html => {:method => :put, :multipart => true}, remote: true) do |f| %>
   <div class="modal-body">
     <div class="col-sm-12">
@@ -31,17 +28,12 @@
           <%= f.text_area :short_bio, :class => "form-control", :id => "short_bio", :placeholder => "Mini biography", :rows => "5" %>
           </div>
       </div>
-      <div class="col-sm-4">
-        <div class="form-group">
-          <%= f.password_field :current_password, autocomplete: "off", :class => "form-control", :placeholder => "Old password" %>
-        </div>
-      </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <div class="form-group">
           <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "New password" %>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <div class="form-group">
           <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Confirm new password" %>
         </div>

@@ -7,15 +7,15 @@
     <br>
     <!--Navigation-->
     <div>
-      <ul class="nav nav-stacked list-group" role="tablist">
-        <li role="presentation" class="active">
-          <a href="#overview" class="list-group-item" aria-controls="#overview" role="tab" data-toggle="tab">
+      <ul class="nav nav-stacked list-group">
+        <li ng-class="{active: isSelected(1)}">
+          <a href="" class="list-group-item" ng-click="selectTab(1)">
             <i class="fa fa-user fa-lg fa-fw">
             </i>&nbsp; Overview
           </a>
         </li>
-        <li role="presentation">
-          <a href="#settings" class="list-group-item" aria-controls="#settings"  role="tab" data-toggle="tab">
+        <li ng-class="{active: isSelected(2)}">
+          <a href="" class="list-group-item" ng-click="selectTab(2)">
             <i class="fa fa-cog fa-lg fa-fw">&nbsp;
             </i>Settings
           </a>
@@ -31,7 +31,7 @@
   </div>
   <div class="col-md-9">
     <div class="tab-content">
-      <div role="overview" class="tab-pane active" id="overview">
+      <div class="tab-pane active" ng-show="isSelected(1)">
         <!--Items on review and wishlist-->
 
         <div class="col-md-12">
@@ -70,7 +70,7 @@
           </div>
         </div>
       </div>
-      <div role="settings" class="tab-pane" id="settings">
+      <div class="tab-pane" ng-show="isSelected(2)">
         <div class="col-md-12">
           <%= render partial: "devise/registrations/edit" %>
         </div>

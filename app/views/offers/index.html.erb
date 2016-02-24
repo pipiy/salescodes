@@ -7,9 +7,9 @@
     <% @offers.each do |offer| %>
       <div class="col-md-3 col-sm-6 hero-feature">
         <div class="thumbnail">
-          <%= image_tag "#{offer.picture}", :size => "400x600" %>
+          <%= image_tag "#{offer.picture}", :size => "260x180" %>
           <div class="caption">
-            <h3><%= offer.name %></h3>
+            <h3><%= link_to offer.name, offer %></h3>
             <p><%= offer.description %></p>
             <p>
               <a href="#" class="btn btn-primary">Buy Now!</a> <%= link_to 'Show', offer, class: "btn btn-default" %>

@@ -37,6 +37,8 @@ gem 'cancancan', '~> 1.10'
 gem 'rmagick'
 gem 'carrierwave'
 gem "gritter", "1.2.0"
+gem 'pry', '~> 0.10.3'
+gem 'pry-nav'
 
 gem 'activeadmin', github: 'activeadmin'
 
