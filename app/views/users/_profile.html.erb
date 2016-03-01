@@ -1,21 +1,25 @@
+<style type="text/css">
+  .img.img-circle{
+    width: 180px;
+    height: 180px;
+  }
+</style>
+
 <div class="col-md-12">
   <div class="col-md-3 text-center">
     <!--User profile-->
-    <%= image_tag @user.avatar_url(:thumb), :border => "0", :class => "img-circle"%>
-    <h3><%= @user.full_name %></h3><!--USER NAME-->
-    <h5><%= @user.email %></h5><!--USER EMAIL-->
-    <br>
+    <%= render "users/details" %>
     <!--Navigation-->
     <div>
       <ul class="nav nav-stacked list-group">
-        <li ng-class="{active: isSelected(1)}">
-          <a href="" class="list-group-item" ng-click="selectTab(1)">
+        <li>
+          <a href="" class="list-group-item" ng-class="{active: isSelected(1)}" ng-click="selectTab(1)">
             <i class="fa fa-user fa-lg fa-fw">
             </i>&nbsp; Overview
           </a>
         </li>
-        <li ng-class="{active: isSelected(2)}">
-          <a href="" class="list-group-item" ng-click="selectTab(2)">
+        <li>
+          <a href="" class="list-group-item" ng-class="{active: isSelected(2)}" ng-click="selectTab(2)">
             <i class="fa fa-cog fa-lg fa-fw">&nbsp;
             </i>Settings
           </a>
@@ -31,46 +35,10 @@
   </div>
   <div class="col-md-9">
     <div class="tab-content">
-      <div class="tab-pane active" ng-show="isSelected(1)">
-        <!--Items on review and wishlist-->
-
-        <div class="col-md-12">
-          <h5>My Stats</h5>
-          <div class="panel panel-default">
-            <div class="panel-body text-center">
-              <div class="col-md-4">
-                <h5>Discounts</h5>
-                <h3><span class="badge">2</span>&nbsp; Requests</h3>
-                <hr>
-                <h3><span class="badge">0</span>&nbsp; Available</h3>
-              </div>
-              <div class="col-md-4">
-                <h5>Reviews</h5>
-                <h3><span class="badge">10</span>&nbsp; Confirmed Reviews</h3>
-              </div>
-              <div class="col-md-4">
-                <h5>Tier</h5>
-                <img src="http://placehold.it/100x100" alt="..." class="img-circle" >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Connect social-->
-        <div class="col-md-6">
-          <h5>Social Network</h5>
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <ul class="nav nav-stacked text-center">
-                <li class="amazon"><a href="#" class="btn btn-warning"><i class="fa fa-amazon fa-lg"></i>&nbsp; Connect your Amazon account</a></li>
-                <li class="facebook"><a href="#" class="btn btn-primary"><i class="fa fa-facebook fa-lg"></i>&nbsp; Link Facebook</a></li>
-                <li class="twitter"><a href="#" class="btn btn-info"><i class="fa fa-twitter fa-lg"></i>&nbsp; Link Twitter</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div ng-show="isSelected(1)">
+        <%= render "users/overview" %>
       </div>
-      <div class="tab-pane" ng-show="isSelected(2)">
+      <div ng-show="isSelected(2)">
         <div class="col-md-12">
           <%= render partial: "devise/registrations/edit" %>
         </div>

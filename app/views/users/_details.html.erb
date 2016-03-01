@@ -1,0 +1,6 @@
+<div id="profile">
+  <%= image_tag @user.avatar_url(:thumb), :border => "0", :class => "img img-circle"%>
+  <h3><%= @user.full_name %></h3><!--USER NAME-->
+  <h5><%= @user.email %></h5><!--USER EMAIL-->
+  <br>
+</div>
