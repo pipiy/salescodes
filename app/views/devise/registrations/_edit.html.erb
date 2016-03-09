@@ -1,14 +1,14 @@
-<%= form_for(@user, :url => registration_path(@user), :html => {:'data-type' => :html, :method => :put, remote: true}) do |f| %>
+<%= form_for(@user, :url => registration_path(@user), :html => {:method => :put, remote: true}) do |f| %>
   <div class="modal-body">
     <div class="col-sm-12">
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6">
         <div class="form-group">
           <%= f.file_field :avatar  %>
         </div>
-      </div>
-      <div class="col-sm-6">
+      </div> -->
+      <div class="col-sm-12">
         <div class="form-group">
-          <%= f.text_field :remote_avatar_url, :class => "form-control", :placeholder => "or image URL"  %>
+          <%= f.text_field :remote_avatar_url, :class => "form-control", :placeholder => "image URL"  %>
         </div>
       </div>
     </div>

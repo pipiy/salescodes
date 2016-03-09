@@ -39,7 +39,8 @@ gem 'carrierwave'
 gem "gritter", "1.2.0"
 gem 'pry', '~> 0.10.3'
 gem 'pry-nav'
-gem 'remotipart',  github: "JangoSteve/remotipart"
+# gem 'remotipart',  github: "JangoSteve/remotipart"
+gem 'omniauth-facebook'
 
 gem 'activeadmin', github: 'activeadmin'
 

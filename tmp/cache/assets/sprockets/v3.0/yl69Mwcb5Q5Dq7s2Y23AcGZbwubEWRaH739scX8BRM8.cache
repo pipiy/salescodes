@@ -1,0 +1,46 @@
+I"¯(function() {
+  $(function() {
+    $(".sign-in").fancybox({
+      maxWidth: 600,
+      maxHeight: 300,
+      fitToView: false,
+      width: '70%',
+      height: '70%',
+      autoSize: false,
+      openEffect: 'none',
+      closeEffect: 'none'
+    });
+    $(".external").fancybox({
+      maxWidth: 600,
+      maxHeight: 350,
+      fitToView: false,
+      width: '70%',
+      height: '70%',
+      autoSize: false,
+      openEffect: 'none',
+      closeEffect: 'none'
+    });
+    $(".sign-up").fancybox({
+      maxWidth: 600,
+      maxHeight: 300,
+      fitToView: false,
+      width: '70%',
+      height: '70%',
+      autoSize: false,
+      openEffect: 'none',
+      closeEffect: 'none'
+    });
+    return $(".forgotpas").fancybox({
+      maxWidth: 600,
+      maxHeight: 200,
+      fitToView: false,
+      width: '70%',
+      height: '70%',
+      autoSize: false,
+      openEffect: 'none',
+      closeEffect: 'none'
+    });
+  });
+
+}).call(this);
+:ET

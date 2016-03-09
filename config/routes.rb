@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :offers
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { :registrations => :"users/registrations", :passwords => :"users/passwords", :sessions => :"users/sessions" }
+  devise_for :users, :controllers => { :registrations => :"users/registrations", :passwords => :"users/passwords", :sessions => :"users/sessions",  :omniauth_callbacks => :"users/omniauth_callbacks"  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
