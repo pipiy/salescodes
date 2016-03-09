@@ -1,5 +1,0 @@
-I"[(function() {
-  this.application = angular.module('application', []);
-
-}).call(this);
-:ET
